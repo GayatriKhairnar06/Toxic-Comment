@@ -10,10 +10,10 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 # -------------------------------
 @st.cache_resource
 def load_artifacts():
-    model = load_model("saved_models/bilstm_toxicity.h5")
-    with open("saved_models/tokenizer.pkl", "rb") as f:
+    model = load_model("bilstm_toxicity.h5")
+    with open("tokenizer.pkl", "rb") as f:
         tokenizer = pickle.load(f)
-    with open("saved_models/labels.json") as f:
+    with open("labels.json") as f:
         labels = json.load(f)
     return model, tokenizer, labels
 
